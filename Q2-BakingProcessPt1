@@ -1,0 +1,13 @@
+import java.util.Scanner;
+public class BakingApplication {
+    public static void main(String[] args) {
+
+        String ingredients = "eggs, flour, salt, baking soda and coco";
+        int timeToMake = 180;
+        int difficultyLevel = 5;
+        
+        // Create an instance of ProcessRecipes
+        ProcessRecipes myRecipe = new ProcessRecipes(ingredients, timeToMake, difficultyLevel);
+        myRecipe.printRecipes();
+    }
+}
