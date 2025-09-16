@@ -1,0 +1,52 @@
+port java.util.Scanner;
+public class DeliveryReport {
+    public static void main(String[] args) {
+
+        int[][] deliveries = {{128, 135, 139}, {155, 129, 175}, {129, 130, 185}};
+        String[] years = {"DELIVERIES 2018", "DELIVERIES 2019", "DELIVERIES 2020"};
+        String[] months = {"JAN", "FEB", "MAR"};
+
+        System.out.println("**************************************************");
+        System.out.println("DELIVERIES REPORT");
+        System.out.println("**************************************************");
+
+        System.out.printf("%-20s", "");
+        for (String month : months) {
+            System.out.printf("%-10s", month);
+        }
+        System.out.println();
+
+        for (int i = 0; i < deliveries.length; i++) {
+            System.out.printf("%-20s", years[i]);
+            for (int j = 0; j < deliveries[i].length; j++) {
+                System.out.printf("%-10d", deliveries[i][j]);
+            }
+            System.out.println();
+        }
+
+        System.out.println("--------------------------------------------------");
+
+        int totalDeliveries = 0;
+        int maxDeliveries = deliveries[0][0];
+        int minDeliveries = deliveries[0][0];
+
+        for (int[] yearDeliveries : deliveries) {
+            for (int deliveryCount : yearDeliveries) {
+                totalDeliveries += deliveryCount;
+                if (deliveryCount > maxDeliveries) {
+                    maxDeliveries = deliveryCount;
+                }
+                if (deliveryCount < minDeliveries) {
+                    minDeliveries = deliveryCount;
+                }
+            }
+        }
+
+        System.out.println("DELIVERIES STATISTICS");
+        System.out.println("**************************************************");
+        System.out.printf("Total Deliveries:%d%n", totalDeliveries);
+        System.out.printf("Maximum Deliveries:%d%n", maxDeliveries);
+        System.out.printf("Minimum Deliveries:%d%n", minDeliveries);
+        System.out.println("**************************************************");
+    }
+}
