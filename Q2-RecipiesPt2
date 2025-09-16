@@ -1,0 +1,27 @@
+public abstract class Recipes implements iRecipes {
+    // Protected variables to be accessible by subclasses
+    protected String ingredients;
+    protected int timeToMake;
+    protected int difficultyLevel;
+
+    // Constructor to initialize the recipe details
+    public Recipes(String ingredients, int timeToMake, int difficultyLevel) {
+        this.ingredients = ingredients;
+        this.timeToMake = timeToMake;
+        this.difficultyLevel = difficultyLevel;
+    }
+
+    // Get methods for accessing the private variables
+    public String getIngredients() {
+        return ingredients;
+    }
+
+    public int getTimeToMake() {
+        return timeToMake;
+    }
+
+    public int getDifficultyLevel() {
+        return difficultyLevel;
+    }
+}
+
