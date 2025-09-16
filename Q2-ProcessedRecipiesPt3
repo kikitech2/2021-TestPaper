@@ -1,0 +1,17 @@
+public class ProcessRecipes extends Recipes {
+
+    public ProcessRecipes(String ingredients, int timeToMake, int difficultyLevel) {
+        super(ingredients, timeToMake, difficultyLevel);
+    }
+    @Override
+    public void printRecipes() {
+        // Print the header line
+        System.out.println("**************************************************");
+
+        System.out.println("INGREDIENTS: " + ingredients);
+        System.out.println("TIME TO MAKE: " + timeToMake);
+        System.out.println("DIFFICULTY LEVEL: " + difficultyLevel);
+
+        System.out.println("**************************************************");
+    }
+}
